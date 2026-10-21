@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yasmeen Galle | UX research and design</title>
+<meta name="description" content="Yasmeen Galle is an HCI master's student at the University of Maryland researching how people use technology, with a focus on safety, privacy, and everyday tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<!--
+  HOW TO EDIT
+  1. Anything shown with a dashed pink outline (class "todo") is a placeholder. Replace the text, then delete the class.
+  2. To add an image, replace a <figure class="slot">...</figure> block with:
+     <figure><img src="images/your-file.png" alt="Describe the image"><figcaption>Short caption</figcaption></figure>
+     and upload the images folder to your repo next to index.html.
+  3. Check NDA and participant-privacy rules before publishing client or interview material.
+-->
+<style>
+:root{
+  --bg:#121629; --panel:#1a2038; --line:#2c3558; --text:#eceff8; --muted:#a3abc7;
+  --accent:#9b2247; --accent-text:#f08ba6; --on-accent:#ffffff;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.125rem/1.65 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent-text);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+
+/* nav */
+nav{position:sticky;top:0;z-index:5;background:rgba(18,22,41,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:.9rem;padding-bottom:.9rem}
+nav .name{font:800 1.05rem var(--display);text-decoration:none}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;color:var(--muted);font-weight:600}
+nav ul a:hover{color:var(--accent-text)}
+
+/* hero */
+.hero{padding:6rem 0 5rem}
+.hero h1{font:800 clamp(2.5rem,7.2vw,5.4rem)/1.02 var(--display);letter-spacing:-.025em;margin:0 0 1.75rem;max-width:15ch}
+.hero h1 span{display:block;animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero h1 span:nth-child(2){animation-delay:.12s}
+.hero h1 span:nth-child(3){animation-delay:.24s}
+@keyframes rise{from{opacity:0;transform:translateY(.6em)}to{opacity:1;transform:none}}
+.hero p{max-width:56ch;color:var(--muted);margin:0 0 2rem}
+.hero p strong{color:var(--text)}
+.btns{display:flex;flex-wrap:wrap;gap:.9rem}
+.btn{display:inline-block;padding:.8rem 1.4rem;font-weight:600;text-decoration:none;border:2px solid var(--accent-text);border-radius:6px}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn:hover{transform:translateY(-2px)}
+.btn{transition:transform .15s}
+
+/* sections */
+section{padding:4.5rem 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(1.8rem,4vw,2.6rem)/1.1 var(--display);letter-spacing:-.015em;margin:0 0 2.5rem}
+h3{font:800 1.5rem/1.2 var(--display);margin:2.2rem 0 .6rem}
+.mark{background:linear-gradient(transparent 58%,rgba(155,34,71,.75) 58%);padding:0 .1em}
+.todo{outline:2px dashed var(--accent-text);outline-offset:3px;color:var(--accent-text)}
+
+/* case studies */
+.case{display:grid;grid-template-columns:260px 1fr;gap:3rem;padding:3.5rem 0;border-top:1px solid var(--line)}
+.case:first-of-type{border-top:0;padding-top:0}
+.case aside{align-self:start;position:sticky;top:5.5rem}
+.case aside h3{margin:0 0 1.25rem;font-size:1.6rem}
+dl{margin:0;font-size:1rem}
+dt{font-weight:600;color:var(--accent-text);margin-top:.9rem}
+dd{margin:.1rem 0 0;color:var(--muted)}
+.case p{max-width:64ch;margin:0 0 1.1rem}
+.case h4{font:800 1.15rem var(--display);margin:2rem 0 .4rem}
+.case ul{max-width:64ch;padding-left:1.2rem;margin:0 0 1.1rem}
+.case li{margin-bottom:.4rem}
+figure{margin:1.8rem 0;max-width:100%}
+figure img{width:100%;height:auto;border-radius:8px;border:1px solid var(--line);display:block}
+figcaption{font-size:.95rem;color:var(--muted);margin-top:.5rem}
+.slot{background:var(--panel);border:2px dashed var(--line);border-radius:8px;padding:2.5rem 1.5rem;color:var(--muted);font-size:1rem}
+
+/* about + contact */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.about p{margin:0 0 1.1rem;max-width:56ch}
+.tools{columns:2;font-size:1rem;color:var(--muted);padding-left:1.1rem;margin:0}
+.contact a{font:800 clamp(1.4rem,4vw,2.2rem) var(--display);display:inline-block;margin-bottom:1rem;text-decoration-color:var(--accent-text);text-underline-offset:.2em;text-decoration-thickness:3px}
+footer{padding:2.5rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+
+@media (max-width:820px){
+  .case{grid-template-columns:1fr;gap:1.5rem}
+  .case aside{position:static}
+  .about{grid-template-columns:1fr;gap:1rem}
+  nav ul{gap:1rem}
+  .hero{padding:4rem 0 3.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .hero h1 span{animation:none}
+  .btn{transition:none}
+}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="name" href="#top">Yasmeen Galle</a>
+    <ul>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1><span>I research how people use technology,</span><span>then design</span><span>what they need.</span></h1>
+    <p><strong>HCI master's student at the University of Maryland</strong> with a psychology and data science background. My work uses interviews, surveys, and usability testing to find where products fail people, especially around safety and privacy.</p>
+    <div class="btns">
+      <a class="btn solid" href="#work">Read the case studies</a>
+      <a class="btn" href="resume.pdf">Download resume</a>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <h2>Selected work</h2>
+
+    <!-- Case study 1 -->
+    <article class="case">
+      <aside>
+        <h3>Helping IPV support staff respond to AI image abuse</h3>
+        <dl>
+          <dt>Role</dt><dd>Research Intern</dd>
+          <dt>Where</dt><dd>Carnegie Mellon University, School of Computer Science</dd>
+          <dt>Timeline</dt><dd>May 2025 to present</dd>
+          <dt>Methods</dt><dd>Semi-structured interviews, survey, thematic coding, co-design</dd>
+          <dt>Tools</dt><dd>MaxQDA, Qualtrics, Excel, Figma</dd>
+        </dl>
+      </aside>
+      <div>
+        <h4>The problem</h4>
+        <p>Intimate-partner violence (IPV) now includes technology-facilitated abuse, including AI-manipulated images. Shelter and support staff are trained on many forms of abuse, but often not on this one, and survivors can be left without a way to confirm or stop it.</p>
+
+        <h4>What I did</h4>
+        <ul>
+          <li>Conducted <span class="mark">15 semi-structured interviews</span> with IPV support stakeholders and coded them in MaxQDA to find themes in user needs, support gaps, and forms of abuse.</li>
+          <li>Analyzed a <span class="mark">survey of 55 respondents</span> in Qualtrics and Excel to test the interview themes at a larger scale.</li>
+          <li>Am designing a co-design study, including research questions, recruitment criteria, and protocols with privacy and safety built in. Staff take part as collaborators, and their feedback shapes each Figma prototype iteration. This study is in early development.</li>
+        </ul>
+
+        <h4>What we found</h4>
+        <p>Interviews and survey data together showed consistent gaps in staff knowledge, training, and resources for technology-facilitated abuse (TFA). IPV support staff have an educational gap about TFA, and that gap limits how well they can help survivors. Staff need training, resources, and guides.</p>
+
+        <figure><img src="Galle-Understanding the Support Gap, Staff Challenges in Responding to TFA Among IPV Survivors- UPDATED
+.pdf" alt="Research Poster"><figcaption>This research poster illustrates an overview of this study including background, methods, and results.</figcaption></figure>
+
+        <h4>Result</h4>
+        <p>Presented findings as research posters at the CRA Undergraduate to PhD Conference and the CMU REU Poster Session. These findings point to training, resources, and guides as the next step for IPV support staff. The AI image manipulation co-design study is now taking shape.</p>
+      </div>
+    </article>
+
+    <!-- Case study 2 -->
+    <article class="case">
+      <aside>
+        <h3>Evaluating dashboards and workflows for a financial services client</h3>
+        <dl>
+          <dt>Role</dt><dd>UX researcher and designer, student team</dd>
+          <dt>Where</dt><dd>University of Maryland, HCI program</dd>
+          <dt>Client</dt><dd>The home and land team at a financial services company</dd>
+          <dt>Timeline</dt><dd>October 2026 to present</dd>
+          <dt>Methods</dt><dd>Interviews, usability testing</dd>
+          <dt>Tools</dt><dd>Figma</dd>
+        </dl>
+      </aside>
+      <div>
+        <h4>The problem</h4>
+        <p>The home and land team at a financial services company recently launched a new real-time dashboard. Our student team is working with them to improve its user experience.</p>
+
+        <h4>What I did</h4>
+        <ul>
+          <li>Interviewing lenders, managers, and processors on the team to learn how they use the dashboard in their daily work.</li>
+          <li>Running usability testing with the same groups to find usability issues and unmet needs.</li>
+        </ul>
+
+        <h4>Where it stands</h4>
+        <p>This project started in October 2026. Interviews and usability testing with the team are underway, and I'll add recommendations here as the work moves along.</p>
+      </div>
+    </article>
+
+    <!-- Case study 3 -->
+    <article class="case">
+      <aside>
+        <h3>Testing an app that helps young adults adopt cybersecurity habits</h3>
+        <dl>
+          <dt>Role</dt><dd>Research assistant</dd>
+          <dt>Where</dt><dd>Carnegie Mellon University, School of Computer Science</dd>
+          <dt>Timeline</dt><dd>May 2026 to present</dd>
+          <dt>Methods</dt><dd>Interviews, survey, comparison of two study conditions</dd>
+        </dl>
+      </aside>
+      <div>
+        <h4>The problem</h4>
+        <p>Cybersecurity habits are hard to build. This study tests an app with a 21-day challenge that helps young adults make cybersecurity part of their routine, and encourages them to see these practices as part of being an adult.</p>
+
+        <h4>What I did</h4>
+        <ul>
+          <li>Conducted interviews and took detailed notes on how participants used the app.</li>
+          <li>Documented participant feedback on usability, features, and ease of use.</li>
+          <li>Cleaned and analyzed interview transcripts and survey data to find barriers to adoption.</li>
+          <li>Support a comparison of two groups: participants who do only the cybersecurity challenge, and participants who do cybersecurity plus other chores and adulting tasks.</li>
+        </ul>
+
+        <h4>Where it stands</h4>
+        <p>This study is a work in progress, with interviews and a survey still underway.</p>
+
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <div class="about">
+      <div>
+        <p>I started in psychology, where I learned to ask why people behave the way they do. A data science minor taught me to check those answers against numbers. Human-computer interaction lets me use both to improve real products.</p>
+        <p>At William &amp; Mary, I used engagement data to redesign wellness outreach, which raised student engagement by about 40%, and I cut repeat IT support requests by about 10% by finding patterns in tickets. I carry that habit of looking for patterns into every project.</p>
+      </div>
+      <div>
+        <p>What I work with:</p>
+        <ul class="tools">
+          <li>Usability testing</li>
+          <li>User interviews</li>
+          <li>Surveys</li>
+          <li>Thematic coding</li>
+          <li>Mixed-methods research</li>
+          <li>Figma prototyping</li>
+          <li>HTML, CSS, JavaScript</li>
+          <li>MaxQDA, Qualtrics, SPSS</li>
+          <li>ChatGPT, Claude, Gemini</li>
+          <li>Figma AI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <a href="mailto:yasmeengalle@gmail.com">yasmeengalle@gmail.com</a><br>
+    <a href="https://linkedin.com/in/yasmeen-galle-3a7892273">LinkedIn</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Yasmeen Galle, Springfield, VA. Master of Science in Human-Computer Interaction, University of Maryland.</div>
+</footer>
+
+</body>
+</html>
